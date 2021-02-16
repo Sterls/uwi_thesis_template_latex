@@ -1,0 +1,105 @@
+\documentclass{thesisuni}
+\pagestyle{headings}
+
+%Use packages here if needed
+%\usepackage{natbib}
+
+\usepackage[authordate, backend=biber, ibidtracker=false]{biblatex-chicago}
+\addbibresource{myrefs.bib}
+\addbibresource{newrefs.bib}
+
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{amssymb}
+\usepackage{pdfpages}
+\usepackage[justification=justified,singlelinecheck=false]{caption}
+\urlstyle{same}
+
+%%%%%%%%%%%%   All the preamble material:   %%%%%%%%%%%%
+
+\title{Place title of thesis here}
+
+\author{First_Name Middle_Names}{Last_Name}
+
+\otherdegrees{B.Sc., University of the West Indies, 2010 \\
+	      M.Phil., University of The West Indies, 2014}
+
+\degree{Masters of Philosophy in Electrical and Computer Engineering}		%  #1 {long descr.}
+	{M.Phil., Electrical and Computer Engineering}		%  #2 {short descr.}
+
+\dept{Department of}			%  #1 {designation}
+	{Electrical and Computer Engineering}		%  #2 {name}
+
+\advisor{Dr.}				%  #1 {title}
+	{~Place supervisor name here}			%  #2 {name}
+
+\reader{Dr.~Place advisory member name here}		%  2nd person to sign thesis
+\readerThree{Dr.~Place advisory member name here}		%  3rd person to sign thesis
+
+
+
+\abstract  {% because it is very short
+
+	%Often the abstract will be long enough to require
+	%more than one page, in which case the macro
+	%``$\backslash$OnePageChapter'' should {\it not}
+	%be used.
+
+	%But this one isn't, so it should.
+	
+	Write abstract here
+	
+	\vspace{0.5in}
+	
+	\textbf{Keywords}: Place keywords here, separated by semicolons.
+	
+	}
+
+\acknowledgements{	\OnePageChapter	% *MUST* BE ONLY ONE PAGE!
+%\addcontentsline{toc}{section}{Acknowledgments}
+	%Here's where you acknowledge folks who helped.
+	%But keep it short, i.e., no more than one page,
+	%as required by the Grad School Specifications.
+	
+	Place acknowledgements here
+	
+	}
+	
+\dedication[Dedication]{	% NEVER use \OnePageChapter here.
+	Write dedication here.
+	}
+
+%\ToCisShort	% use this only for 1-page Table of Contents
+
+%\LoFisShort	% use this only for 1-page Table of Figures
+% \emptyLoF	% use this if there is no List of Figures
+
+%\LoTisShort	% use this only for 1-page Table of Tables
+% \emptyLoT	% use this if there is no List of Tables
+
+
+\begin{document}
+
+%%% Write main body of thesis here.
+
+\defbibheading{bibliography}[\refname]{%
+  \chapter*{References}%
+  \markboth{}{}
+	\addcontentsline{toc}{chapter}{References}
+}
+
+\singlespacing
+\printbibliography[heading=bibliography]
+\forcepageno
+
+
+\appendix
+
+\doublespacing
+
+\chapter{Place Appendix title here}
+\label{Place name here for reference in document}
+\forcepageno
+
+\end{document}
